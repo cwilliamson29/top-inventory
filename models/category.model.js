@@ -7,7 +7,7 @@ const CategorySchema = new Schema({
   desc: { type: String, require: true, maxLength: 100 },
 });
 
-CategorySchema.virtual("url").get(() => {
+CategorySchema.virtual("url").get(function () {
   return `/category/${this._id}`;
 });
 

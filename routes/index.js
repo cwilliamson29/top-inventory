@@ -1,12 +1,11 @@
 var express = require("express");
+const { cate_get } = require("../controllers/category.controller");
 var router = express.Router();
 const usersRouter = require("./users.router");
 
 router.get("/users", usersRouter);
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
-});
+router.get("/", cate_get);
 
 module.exports = router;
