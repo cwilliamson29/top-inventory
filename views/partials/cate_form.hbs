@@ -1,0 +1,14 @@
+<h1>Categories</h1>
+			{{#each categories as |cate|}}
+				<div class="">
+          <form method="POST" action="http://localhost:4000{{cate.url}}/delete">
+            <button type="submit">DELETE</button>
+          </form>
+					<a href={{cate.url}} alt={{cate.name}}> {{cate.name}} </a>
+				</div>
+			{{/each}}
+<form method="POST" action="">
+    <label>Category Name:</label>
+  <input id="textInput" type="text" name="name"></input>
+  <input type="submit"></input>
+</form>

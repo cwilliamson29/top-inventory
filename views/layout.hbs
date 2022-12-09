@@ -1,23 +1,23 @@
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <div class="sidebar">
-      <h1>Categories</h1>
-      {{#each categories as |cate|}}
-        <div class="link white">
-          <a href={{cate.url}} alt={{cate.name}}> {{cate.name}} </a>
-        </div>
-      {{/each}}
+	<head>
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<div class="sidebar">
+			<h1><a href="/">Categories</a></h1>
+			{{#each categories as |cate|}}
+				<div class="link white">
+					<a href={{cate.url}} alt={{cate.name}}> {{cate.name}} </a>
+				</div>
+			{{/each}}
 
-      <div class="link add black">
-        <a href="/category/new" alt="Add new category"> Add Category </a>
-      </div>
-    </div>
-    <div class="main">
-      {{{body}}}
-    </div>
-  </body>
+			<div class="link black">
+				<a href="/category/new" alt="Add new category"> Add Category </a>
+			</div>
+		</div>
+		<div class="main">
+			{{{body}}}
+		</div>
+	</body>
 </html>

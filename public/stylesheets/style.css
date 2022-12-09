@@ -5,10 +5,10 @@ body {
   display: flex;
   flex-flow: row wrap;
 }
-.white {
-  color: white;
+.white a {
+  color: white !important;
 }
-.black {
+.black a {
   color: black;
 }
 
@@ -32,9 +32,6 @@ body {
 }
 .link a {
   text-decoration: none;
-}
-.add {
-  background-color: black;
 }
 
 .main {
