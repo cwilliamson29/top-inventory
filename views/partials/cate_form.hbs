@@ -1,14 +1,27 @@
 <h1>Categories</h1>
-			{{#each categories as |cate|}}
-				<div class="">
-          <form method="POST" action="http://localhost:4000{{cate.url}}/delete">
-            <button type="submit">DELETE</button>
-          </form>
-					<a href={{cate.url}} alt={{cate.name}}> {{cate.name}} </a>
-				</div>
-			{{/each}}
-<form method="POST" action="">
-    <label>Category Name:</label>
-  <input id="textInput" type="text" name="name"></input>
-  <input type="submit"></input>
-</form>
+<div class="form_container">
+  {{#each categories as |cate|}}
+    <div class="button_delete">
+      <form method="POST" action="http://localhost:4000{{cate.url}}/delete">
+        <button type="submit">DELETE</button>
+      </form>
+      <a href={{cate.url}} alt={{cate.name}}> {{cate.name}} </a>
+    </div>
+  {{/each}}
+
+</div>
+<div class="form_container">
+  <form method="POST" action="">
+    <div class="form_inputs">
+      <label>Category Name:</label><br />
+      <input id="name" type="text" name="name" />
+    </div>
+
+    <div class="form_inputs">
+      <label>Category Description:</label><br />
+      <textarea id="desc" name="desc" cols="36" rows="5"></textarea>
+    </div>
+
+    <button type="submit">Create Category</button>
+  </form>
+</div>
