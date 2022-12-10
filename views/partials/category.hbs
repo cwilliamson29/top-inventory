@@ -1,7 +1,11 @@
 <h1>{{title}}</h1>
 <p>{{desc}}</p>
 {{#each items as |item|}}
-	<div class="">
-		{{item}}
-	</div>
+  {{item.indexof}}
+  <div class="item-display">
+    <div class="item-name">{{item.name}}</div>
+    <div class="item-desc">{{item.desc}}</div>
+    <div class="item-onhand">{{item.onHand}}</div>
+    <div class="item-price">{{item.price}}</div>
+  </div>
 {{/each}}

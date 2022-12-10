@@ -60,3 +60,36 @@ body {
 .form_inputs {
   margin-top: 10px;
 }
+.item-display {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  line-height: 25px;
+}
+.item-display:nth-child(even) {
+  background-color: lightgray;
+}
+.item-name {
+  font-size: 17px;
+  font-weight: bold;
+  width: 200px;
+  border-right: 1px solid black;
+}
+.item-desc {
+  width: 50%;
+  border-right: 1px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.item-onhand {
+  width: 100px;
+  text-align: right;
+  border-right: 1px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.item-price {
+  width: 100px;
+  text-align: right;
+}
