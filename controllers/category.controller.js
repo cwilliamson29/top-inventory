@@ -15,15 +15,15 @@ exports.cate_get = (req, res) => {
 			});
 		});
 };
-cate_get_get = (req, res, next) => {
+exports.get_category_sidebar = (req, res, next) => {
 	Category.find()
 		.sort([["name", "ascending"]])
-		.exec((err, list_categories,) => {
+		.exec((err, list_categories) => {
 			if (err) {
 				return next(err);
 			}
-			return next(list_categories)
-
+			req.list_categories = list_categories;
+			next();
 		});
 };
 
@@ -42,15 +42,17 @@ exports.cate_create_get = (req, res) => {
 };
 
 exports.cate_item_get = (req, res) => {
-	Products.find({ category: req.params.id }).exec((err, list_items) => {
-		if (err) {
-			return next(err);
-		}
-    const categories = cate_get_get()
-		res.render("partials/category", {
-			title: req.params.name,
-			items: list_items,
-      categories: categories
+	Category.findById(req.params.id).then((docs) => {
+		Products.find({ category: req.params.id }).exec((err, list_items) => {
+			if (err) {
+				return next(err);
+			}
+			res.render("partials/category", {
+				title: docs.name,
+				items: list_items,
+				categories: req.list_categories,
+				desc: docs.desc,
+			});
 		});
 	});
 };
@@ -78,8 +80,5 @@ exports.cate_delete = (req, res) => {
 	res.redirect("/category/new");
 };
 function newFunction(list_categories) {
-  return list_categories,
-
-    ;
+	return list_categories;
 }
-
