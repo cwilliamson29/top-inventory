@@ -1,95 +1,149 @@
 body {
-  margin: 0px;
-  padding: 0px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-  display: flex;
-  flex-flow: row wrap;
+	margin: 0px;
+	padding: 0px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	display: flex;
+	flex-flow: row wrap;
 }
 .white a {
-  color: white !important;
+	color: white !important;
 }
 .black a {
-  color: black;
+	color: black;
 }
 
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(93, 93, 207);
+	width: 250px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(93, 93, 207);
 }
 .link {
-  width: 225px;
-  height: 50px;
-  line-height: 50px;
-  padding-left: 25px;
-  font-size: 20px;
-  font-weight: bold;
+	width: 225px;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 25px;
+	font-size: 20px;
+	font-weight: bold;
 }
 .link:hover {
-  background-color: red;
+	background-color: red;
 }
 .link a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .main {
-  width: 80%;
+	width: calc(100vw - 270px);
 }
 .form_container {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .button_delete {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 .button_delete button {
-  border: 1px solid red;
-  border-radius: 5px;
-  background-color: red;
-  height: 30px;
+	border: 1px solid red;
+	border-radius: 5px;
+	background-color: red;
+	height: 30px;
 }
 .button_delete form button {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 .button_delete a {
-  line-height: 35px;
+	line-height: 35px;
 }
 .form_inputs {
-  margin-top: 10px;
+	margin-top: 10px;
+}
+/****************************/
+/*      CATEGORY.HBS        */
+/****************************/
+.item-display-outline {
+	width: 100%;
+	padding: 10px;
+	background-color: darkgray;
+}
+.item-display-outline-inner {
+	width: 100%;
+	background-color: #fff;
 }
 .item-display {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  line-height: 25px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	width: 99%;
+	background-color: white;
+	height: 25px;
 }
 .item-display:nth-child(even) {
-  background-color: lightgray;
+	background-color: lightgray;
 }
 .item-name {
-  font-size: 17px;
-  font-weight: bold;
-  width: 200px;
-  border-right: 1px solid black;
+	font-size: 15px;
+	font-weight: bold;
+	width: 200px;
+	border-right: 1px solid black;
+	line-height: 25px;
 }
 .item-desc {
-  width: 50%;
-  border-right: 1px solid black;
-  padding-right: 5px;
-  padding-left: 5px;
+	width: 50%;
+	border-right: 1px solid black;
+	padding-right: 5px;
+	padding-left: 5px;
+	line-height: 25px;
 }
 .item-onhand {
-  width: 100px;
-  text-align: right;
-  border-right: 1px solid black;
-  padding-right: 5px;
-  padding-left: 5px;
+	width: 50px;
+	text-align: right;
+	border-right: 1px solid black;
+	padding-right: 5px;
+	padding-left: 5px;
+	line-height: 25px;
 }
 .item-price {
-  width: 100px;
-  text-align: right;
+	width: 75px;
+	text-align: right;
+	line-height: 25px;
+}
+.item-buttons {
+	display: flex;
+	flex-direction: row;
+	width: 130px;
+	height: 25px;
+	border-left: 1px solid black;
+	padding-left: 5px;
+}
+.item-buttons form {
+	padding-left: 10px;
+	line-height: 25px;
+}
+.item-buttons-edit {
+	background-color: green;
+	border: 1px solid green;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.item-buttons-delete {
+	background-color: red;
+	border: 1px solid red;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.item-display-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+.item-display-button button {
+	width: 200px;
 }

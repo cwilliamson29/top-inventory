@@ -48,6 +48,7 @@ exports.cate_item_get = (req, res) => {
 				return next(err);
 			}
 			res.render("partials/category", {
+				id: req.params.id,
 				title: docs.name,
 				items: list_items,
 				categories: req.list_categories,

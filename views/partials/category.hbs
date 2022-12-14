@@ -1,11 +1,31 @@
 <h1>{{title}}</h1>
 <p>{{desc}}</p>
-{{#each items as |item|}}
-  {{item.indexof}}
-  <div class="item-display">
-    <div class="item-name">{{item.name}}</div>
-    <div class="item-desc">{{item.desc}}</div>
-    <div class="item-onhand">{{item.onHand}}</div>
-    <div class="item-price">{{item.price}}</div>
-  </div>
-{{/each}}
+<div class="item-display-outline">
+	<div class="item-display-outline-inner">
+		{{#each items as |item|}}
+			{{item.indexof}}
+			<div class="item-display">
+				<div class="item-name">{{item.name}}</div>
+				<div class="item-desc">{{item.desc}}</div>
+				<div class="item-onhand">{{item.onHand}}</div>
+				<div class="item-price">{{item.price}}</div>
+				<div class="item-buttons">
+					<form method="POST" action="">
+						<button
+							type="submit"
+							class="item-buttons-delete"
+						>DELETE</button>
+					</form>
+					<form method="POST" action="">
+						<button type="submit" class="item-buttons-edit">EDIT</button>
+					</form>
+				</div>
+			</div>
+		{{/each}}
+		<div class="item-display-button">
+			<form method="get" action="/products/{{id}}/new">
+				<button type="submit" class="item-button-delete">Add New Product</button>
+			</form>
+		</div>
+	</div>
+</div>
